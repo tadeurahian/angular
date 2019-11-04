@@ -36,21 +36,20 @@ import {getDebugContext, getErrorLogger, getOriginalError} from './errors';
  * @publicApi
  */
 
-export class FakeErrorHandler extends ErrorHandler {
-  /* ... */
-
-  handleError(error: any) : void {
-    return;
-  }
-
-  /* ... */
-}
-
 export class ErrorHandler {
   /**
    * @internal
    */
   _console: Console = console;
+
+  wrapMethod(error: any) : void {
+    this.novoMetodo();
+    this.handleError(error);
+  }
+
+  novoMetodo() : any {
+    /* ... */
+  }
 
   handleError(error: any): void {
     const originalError = this._findOriginalError(error);
