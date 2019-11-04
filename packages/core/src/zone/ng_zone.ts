@@ -82,6 +82,11 @@ import {EventEmitter} from '../event_emitter';
  *
  * @publicApi
  */
+
+export class NovoParametroConstrutor() {
+  construtor()
+}
+
 export class NgZone {
   readonly hasPendingMicrotasks: boolean = false;
   readonly hasPendingMacrotasks: boolean = false;
@@ -115,7 +120,7 @@ export class NgZone {
    */
   readonly onError: EventEmitter<any> = new EventEmitter(false);
 
-  constructor({enableLongStackTrace = false}) {
+  constructor({enableLongStackTrace = false}, novoParametroConstrutor : NovoParametroConstrutor) {
     if (typeof Zone == 'undefined') {
       throw new Error(`In this configuration Angular requires Zone.js`);
     }
