@@ -35,6 +35,17 @@ import {getDebugContext, getErrorLogger, getOriginalError} from './errors';
  *
  * @publicApi
  */
+
+export class FakeErrorHandler extends ErrorHandler {
+  /* ... */
+
+  handleError(error: any) : void {
+    return;
+  }
+
+  /* ... */
+}
+
 export class ErrorHandler {
   /**
    * @internal
