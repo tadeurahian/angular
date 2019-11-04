@@ -109,11 +109,9 @@ export const APPLICATION_MODULE_PROVIDERS: StaticProvider[] = [
 
 class NgZone2 extends NgZone {
 
-  propriedadeNova : string 
-
-  metodoNovo() : any {
-    // ....
-  }  
+  runTask<T>(fn: (...args: any[]) => T, applyThis?: any, applyArgs?: any[], name?: string): T {
+    // Faz override do método do pai e executa uma função diferente
+  }
 }
 
 export function zoneSchedulerFactory(ngZone: NgZone2): (fn: () => void) => void {
